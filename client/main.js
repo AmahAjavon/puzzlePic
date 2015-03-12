@@ -40,12 +40,22 @@ $(function( $, window ) {
         backgroundImage: 'url('+ $img.attr('src') +')'
       });
 
-      debugger;
+
       // Adjust position
       $wraps.find(".image").each(function() {
         var pos = $(this).position();
         $(this).css( 'backgroundPosition', -pos.left +'px '+ -pos.top +'px' );
       });
+
+     var image1 = $('.sliced .tile:nth-child(2)').children().attr('id', 'img1');
+     var image2 = $('.sliced .tile:nth-child(3)').children().attr('id', 'img2');
+     var image3 = $('.sliced .tile:nth-child(4)').children().attr('id', 'img3');
+     var image4 = $('.sliced .tile:nth-child(5)').children().attr('id', 'img4');
+     var image5 = $('.sliced .tile:nth-child(6)').children().attr('id', 'img5');
+     var image6 = $('.sliced .tile:nth-child(7)').children().attr('id', 'img6');
+     var image7 = $('.sliced .tile:nth-child(8)').children().attr('id', 'img7');
+     var image8 = $('.sliced .tile:nth-child(9)').children().attr('id', 'img8');
+     var image9 = $('.sliced .tile:nth-child(10)').children().attr('id', 'img9');
 
       $('#shuffle').click(function() {
        $('#shuffle').attr('disabled', true);
@@ -69,6 +79,11 @@ $(function( $, window ) {
         $('.tile').click(function() {
 
           var id=$(this).attr('id');
+
+          // if (image1.parent().attr('data-num', '1')) {
+          //   console.log('img1')
+          // }
+
           //alert(id)
           if(id=='td1') {
             if(isEmpty('td2')) swap(id,'td2');
@@ -112,6 +127,7 @@ $(function( $, window ) {
             if(isEmpty('td6')) swap(id,'td6');
             else if(isEmpty('td8')) swap(id,'td8');
           }
+
         });
       });
     });
